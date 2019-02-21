@@ -14,6 +14,16 @@ type BinaryIndexedTree struct {
 
 //------------------------------------------------------------------------------
 
+// NewBinaryIndexedTree is a constructor to construct new instance with underlying
+// arrays initialized with proper size
+func NewBinaryIndexedTree() *BinaryIndexedTree {
+	bit := new(BinaryIndexedTree)
+	bit.initialize()
+	return bit
+}
+
+//------------------------------------------------------------------------------
+
 func (tree *BinaryIndexedTree) initialize() {
 	tree.frequencies = make([]int, 0, 100)
 	tree.indexedTree = make([]int, 1, 101)

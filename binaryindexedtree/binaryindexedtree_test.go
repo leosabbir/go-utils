@@ -7,8 +7,7 @@ import (
 
 // TestInit tests initialization of BinaryIndexedTree
 func TestInit(t *testing.T) {
-	bit := BinaryIndexedTree{}
-	bit.initialize()
+	bit := NewBinaryIndexedTree()
 	if bit.frequencies == nil || bit.indexedTree == nil {
 		t.Error("freqquencies and indexedTree slices are not initialized.")
 	}
@@ -33,8 +32,7 @@ func TestInit(t *testing.T) {
 //---------------------------------------------------------------------------------------
 
 func TestAppend(t *testing.T) {
-	bit := BinaryIndexedTree{}
-	bit.initialize()
+	bit := NewBinaryIndexedTree()
 	bit.Append(2)
 	bit.Append(6)
 	if len(bit.frequencies) != 2 || len(bit.indexedTree) != 3 {
@@ -75,8 +73,7 @@ func TestAppend(t *testing.T) {
 //---------------------------------------------------------------------------------------
 
 func TestGetSum(t *testing.T) {
-	bit := BinaryIndexedTree{}
-	bit.initialize()
+	bit := NewBinaryIndexedTree()
 	bit.Append(2)
 	bit.Append(6)
 	bit.Append(5)
@@ -130,8 +127,7 @@ func TestGetSum(t *testing.T) {
 //---------------------------------------------------------------------------------------
 
 func TestGetRangeSum(t *testing.T) {
-	bit := BinaryIndexedTree{}
-	bit.initialize()
+	bit := NewBinaryIndexedTree()
 	bit.Append(2)
 	bit.Append(6)
 	bit.Append(5)
@@ -184,8 +180,7 @@ func TestGetRangeSum(t *testing.T) {
 //---------------------------------------------------------------------------------------
 
 func TestUpdate(t *testing.T) {
-	bit := BinaryIndexedTree{}
-	bit.initialize()
+	bit := NewBinaryIndexedTree()
 	bit.Append(102)
 	bit.Append(65)
 	bit.Append(57)
